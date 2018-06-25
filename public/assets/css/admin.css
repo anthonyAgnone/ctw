@@ -1,0 +1,82 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 5rem 1fr 3fr 4rem;
+    width: 100%;
+    height: 100vh;
+}
+
+
+header {
+
+    grid-column: 2 / span 5;
+}
+
+nav {
+    background-color: #f8f9fa;
+    grid-column: 2 / span 5;
+}
+
+.nav li {
+    height: 6em;
+    padding: 2em 0;
+}
+
+aside a {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    
+}
+
+aside {
+
+    grid-row: 1/span 5;
+    border-right: 1px solid #000;
+    background: #fff;
+}
+main {
+
+    grid-column: 2 / span 5;
+}
+
+footer {
+
+    grid-column: 2/span 5;
+}
+
+.btn-brand {
+    border-radius: 0;
+    height: 5rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 40px;
+  width: 40px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 25px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 25px;
+  color: red;
+}
+
+.effect1{
+    -webkit-box-shadow: 10px 5px 4px -6px rgba(100,100,100, .6 );
+       -moz-box-shadow: 10px 5px 4px -6px rgba(100,100,100, .6 );
+            box-shadow: 10px 7.5vh 4px -6px rgba(100,100,100, .6 );
+}

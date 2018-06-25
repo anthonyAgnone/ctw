@@ -1,0 +1,163 @@
+:root {
+    --main-dark: #332f3a;
+    --main-blue: #01a1e6;
+    --light-blue: #aafdd9;
+    --accent-red: #720e13;
+  
+    --bp-dark: rgba(41, 82, 163, 1);
+    --bp-light-blue: rgba(59, 203, 255, 1);
+    --bp-accent-dark: rgba(72, 113, 127, 1);
+    --bp-accent-light: rgba(47, 162, 204, 1);
+  }
+
+  
+
+  
+  body {
+
+    background-color: var(--bp-dark);
+  }
+  
+
+
+  
+  /* -------------------------------- 
+    Patterns - reusable parts of our design
+    -------------------------------- */
+  @media only screen and (min-width: 1170px) {
+    .cd-is-hidden {
+      visibility: hidden;
+    }
+  }
+  
+  /* -------------------------------- 
+    Resource style 
+    -------------------------------- */
+  header {
+    line-height: 200px;
+    text-align: center;
+    background: var(--bp-dark);
+    height: 100vh;
+    padding: 20vh 0;
+  }
+  
+
+  
+  #header-history {
+    margin-bottom: 2em;
+  }
+  
+  .title-header h1 {
+    font-size: 4em;
+    color: white;
+  }
+  .svgCTWlogo {
+    opacity: 1;
+  }
+  
+  .plugin-stroke {
+    fill-opacity: 1;
+    stroke-width: 0;
+  }
+  
+  .banner {
+      display: none;
+  }
+
+  .gallery-section {
+    background: url('../images/09white.png'),rgba(41, 82, 163, 9);
+    border: 2px solid #fff;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .section-inner {
+    padding: 8rem;
+  }
+
+
+  
+  @media only screen and (min-width: 1170px) {
+    header {
+      height: 100vh;
+      line-height: 300px;
+    }
+    header h1 {
+      font-size: 2.4rem;
+    }
+  }
+  
+
+
+  
+  @media only screen and (min-width: 1170px) {
+    .bp-sections {
+      min-height: 100vh;
+      padding: 3em 0;
+    }
+    #header-history {
+      display: grid;
+      grid-template-columns: 2fr 3fr 2fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      height: 100vh;
+    }
+    
+    .logo-history {
+      grid-row: 2/4;
+      grid-column: 2/3;
+    }
+    
+    .title-header {
+      grid-row: 4/5;
+      grid-column: 2/3;
+      align-self: start;
+      justify-self: end;
+      padding: 0;
+      margin: 0;
+      
+    }
+
+    .banner {
+      opacity: 1;
+      float: right;
+      margin-top: 2em;
+      position: relative; 
+      top: -2em;
+      margin-bottom: 2em;
+  }
+  
+    .inBan {
+        border: 1px solid white;
+        border-top: none;
+    } 
+  }
+  
+
+  
+
+
+  
+  @media only screen and (min-width: 1170px) {
+
+    .banner {
+        display: grid;
+    }
+  }
+
+
+  
+  @media only screen and (min-width: 768px) {
+
+  }
+  
+  @media only screen and (min-width: 1170px) {
+
+  }
+  
+  @media only screen and (min-width: 1170px) {
+
+  }
+
+
+  
+  
