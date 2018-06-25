@@ -22,7 +22,7 @@
                     {{Form::file('cover_image',['class'=>'form-control-file', 'id'=>'customFile'])}}
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
-            {{Form::hidden('_method', 'PATCH')}}
+            {{Form::hidden('_method', 'PUT')}}
             {{Form::submit('submit', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>

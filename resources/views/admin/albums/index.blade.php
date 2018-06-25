@@ -15,8 +15,11 @@
                     <div class="card-body">
                     <h5 class="card-title">{{$album->name}}</h5>
                     <p class="card-text">{!!$album->description!!}</p>
-                    <a href="/admin/albums/{{$album->id}}" class="card-link">Edit</a>
-                    <a href="#" class="card-link">Delete</a>
+                    <a href="/admin/albums/{{$album->id}}" role="button" class="card-link btn btn-success d-inline">Edit</a>
+                    {!! Form::open(['class' => 'form-inline d-inline', 'action' => ['ProjectsController@destroy', $album->id], 'method' => 'POST']) !!}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete Property', ['class' => 'btn btn-danger d-inline'])}}
+                    {!! Form::close() !!}
                     </div>
                 </div>
             @endforeach

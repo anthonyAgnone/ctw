@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Album;
 
 class ProjectsController extends Controller
@@ -141,6 +142,12 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $album = Album::find($id);
+
+        if(Storage::delete('public/album_covers/'.$album->cover_image)){
+            $album->delete();
+        }
+
+        return redirect('/admin/albums')->with('success', 'Album Deleted');
     }
 }

@@ -6,6 +6,10 @@
     <p style="max-width: 40%;" class="pl-3">{!!$album->description!!}</p>
     <a href="/admin/photos/create/{{$album->id}}" class="btn mb-3 d-inline">Add new photo</a>
     <a href="/admin/albums/{{$album->id}}/edit" class="btn mb-3 d-inline">Edit Info</a>
+    {!! Form::open(['class' => 'form-inline d-inline', 'action' => ['ProjectsController@destroy', $album->id], 'method' => 'POST']) !!}
+        {{Form::hidden('_method', 'DELETE')}}
+        {{Form::submit('Delete Property', ['class' => 'btn btn-link d-inline'])}}
+    {!! Form::close() !!}
     <img style="max-width: 4S0%;" class="mb-5 d-block border border-secondary" src="../../storage/album_covers/{{$album->cover_image}}" alt="Album Pdf">
 @endsection
 
@@ -21,7 +25,10 @@
                     <h5 class="card-title">{{$photo->title}}</h5>
                     <p class="card-text">{!!$photo->description!!}</p>
                     <a href="/admin/photos/{{$photo->id}}" class="card-link">View</a>
-                    <a href="#" class="card-link">Delete</a>
+                    {!! Form::open(['class' => 'form-inline d-inline', 'action' => ['ProjectsController@destroy', $album->id], 'method' => 'POST']) !!}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete Property', ['class' => 'btn btn-danger d-inline'])}}
+                    {!! Form::close() !!}
                     </div>
                 </div>
             @endforeach

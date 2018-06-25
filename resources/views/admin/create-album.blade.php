@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
+    <a href="/admin/albums" class="btn"><< Back</a>
     <h3 class="mb-3">Create Property</h3>
     <div class="form-group row p-4">
         {!! Form::open(['action' => 'ProjectsController@store','method'=>'POST', 'enctype'=>'multipart/form-data']) !!}

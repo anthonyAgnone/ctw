@@ -25,7 +25,8 @@ Route::get('/admin/albums', 'ProjectsController@index');
 Route::get('/admin/create-album', 'ProjectsController@create');
 Route::get('/admin/albums/{id}', 'ProjectsController@show');
 Route::get('/admin/albums/{id}/edit', 'ProjectsController@edit');
-Route::get('/admin/albums/{id}/update', 'ProjectsController@update');
+Route::put('/admin/albums/{id}/update', 'ProjectsController@update');
+Route::delete('/admin/albums/{id}', 'ProjectsController@destroy');
 
 Route::get('/admin/photos/create/{id}', 'PhotosController@create');
 Route::post('/admin/photos/store', 'PhotosController@store');

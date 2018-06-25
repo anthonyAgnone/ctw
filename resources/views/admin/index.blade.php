@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <p>graphs and stuff go hear</p>
+    <p>Use the links to edit site content, add properties, and images to those properties.</p>
 @endsection
