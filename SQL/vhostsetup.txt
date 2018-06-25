@@ -1,0 +1,8 @@
+<VirtualHost ctw.local>
+    DocumentRoot "C:/xampp/htdocs/ctwMigrate/public"
+    ServerName ctw.local
+    <Directory "C:/xampp/htdocs/ctwMigrate/public">
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
