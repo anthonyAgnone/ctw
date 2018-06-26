@@ -10,7 +10,7 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete Property', ['class' => 'btn btn-link d-inline'])}}
     {!! Form::close() !!}
-    <img style="max-width: 4S0%;" class="mb-5 d-block border border-secondary" src="../../storage/album_covers/{{$album->cover_image}}" alt="Album Pdf">
+    <img style="max-width: 45%;" class="mb-5 d-block border border-secondary" src="../../storage/album_covers/{{$album->cover_image}}" alt="Album Pdf">
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
 
             @foreach($album->photos as $photo)
                 <div class="card bg-light mb-4 gallery-card mx-4" style="width: 35rem;">
-                    <img class="card-img-top" src="../../storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+                    <img  class="card-img-top" src="../../storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
                     <div class="card-body">
                     <h5 class="card-title">{{$photo->title}}</h5>
                     <p class="card-text">{!!$photo->description!!}</p>

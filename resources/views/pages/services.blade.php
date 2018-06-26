@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Hamburger Menu -->
     <link href="{{ asset('assets/plugins/hamburgers/dist/hamburgers.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/style3.css') }}" rel="stylesheet" />
@@ -221,17 +223,34 @@
 
             </div>
             <div class="container">
-                <h1 class="display-3 my-5 text-white">Services</h1>
+                <h1 class="display-1 my-5 text-white">Services</h1>
                 <div class="inner-section d-flex justify-content-around flex-wrap">
                     <?php
-                    
+                        $imageArray = array(
+                            1 => "chat.png",
+                            2 => "lamp.png",
+                            3 => "smartphone.png",
+                            4 => "hammer.png",
+                            5 => "document.png",
+                            6 => "crane.png",
+                            7 => "key.png",
+                            8 => "blueprint-1.png",
+                            9 => "blueprint-2.png",
+                            10 => "balcony.png",
+                            11 => "chat.png",
+                            12 => "letter.png"
+                        );
                         $i = 1;
                     ?>
                     @foreach($services as $service)
-                        <div class="card border mb-5 border-white" style="width: 18rem; background-color: transparent;">
-                            <img class="card-img-top border border-bottom-white" src="https://loremflickr.com/320/240/business?random={{$i}}" alt="Card image cap">
-                            <div class="card-body text-white">
-                                <p class="card-text">{{$service->body}}</p>
+                        <div class="card my-5 " style="width: 18rem; background-color: transparent;">
+                            @if($i <= count($imageArray))
+                            <img class="wow slideInUp card-img-top my-3" src="assets/images/icons/{{$imageArray[$i]}}" alt="Card image cap">
+                            @else
+                            <img class="wow slideInUp card-img-top my-3" src="assets/images/icons/{{$imageArray[1]}}" alt="Card image cap">
+                            @endif
+                            <div class="card-body mt-3 text-white">
+                                <p class="wow fadeIn card-text h2 text-center">{{$service->body}}</p>
                             </div>
                         </div>
                         <?php
@@ -253,6 +272,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <script src="assets/js/timeline.js"></script>
     <!-- Resource JavaScript -->
 </body>

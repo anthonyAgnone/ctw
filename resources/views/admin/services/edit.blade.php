@@ -2,7 +2,7 @@
 
 @section('header')
     <a href="/admin/edit-content" class="btn"><< Back</a>
-    <h1>Edit Content</h1>
+    <h1>Edit Services</h1>
 @endsection
 
 @section('content')

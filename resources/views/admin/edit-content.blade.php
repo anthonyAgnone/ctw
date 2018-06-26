@@ -36,10 +36,6 @@
             @endforeach @else
             <p>No content found</p>
             @endif
-            <div class="carousel-caption d-none d-md-block">
-                <h5>...</h5>
-                <p>...</p>
-            </div>
         </div>
 
         <div class="carousel-item">
@@ -65,13 +61,7 @@
             @endif
         </div>
 
-        <div class="carousel-item">
-            <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>...</h5>
-                <p>...</p>
-            </div>
-        </div>
+
     </div>
 
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
