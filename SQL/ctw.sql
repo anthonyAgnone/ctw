@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2018 at 08:36 PM
+-- Generation Time: Jun 26, 2018 at 09:25 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -58,6 +58,7 @@ CREATE TABLE `albums` (
   `location` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brochure` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -66,14 +67,14 @@ CREATE TABLE `albums` (
 -- Dumping data for table `albums`
 --
 
-INSERT INTO `albums` (`id`, `name`, `location`, `description`, `cover_image`, `created_at`, `updated_at`) VALUES
-(6, 'Westford Lifestyle Community', 'Canfield, Ohio', 'A 400+ acre master-planned community encompassing single-family homes, condominiums and villas that surround the region’s newest hotel,Courtyard Marriott Youngstown-Canfield, and Kennsington Golf Club, an 18-hole championship golf course designed by award-winning golf course architect, Brian Huntley.\r\n<br /><br />\r\nFuture plans include a banquet facility plus upscale shopping and dining to complement the existing 150,000+ square feet of office and retail space.\r\n<br /><br />\r\nVisit www.WestfordLife.com for more information.', '20fba7_5badeae48734422c8df29939e0d229e4~mv2_1529550878.jpg', '2018-06-21 07:14:38', '2018-06-21 07:14:38'),
-(7, 'Westford Commons', 'Canfield, Ohio', 'Westford Commons is a future open air lifestyle shopping center located on Rt. 224 in Canfield, Ohio, 1/4 mile west of the Route 11 off ramp.\r\n<br /><br />\r\nWestford Commons is located at the forefront of Westford Lifestyle Community which encompasses high end residences, class \"A\" office space, retail, out-patient surgery center, and an 18-hole championship golf course, Kennsington Golf Club.\r\n<br /><br />\r\nFor leasing information, view our informational package or visit www.westfordcommons.com.', '20fba7_f745fc1bb5ee464187751ae341e5cab3~mv2_1529551081.jpg', '2018-06-21 07:18:01', '2018-06-21 07:18:01'),
-(8, 'Clocktower Plaza', 'Lima, Ohio', 'Lima Ohio’s Clocktower Plaza includes nearly 238,000 square feet of retail space and houses both local and regional tenants, such as Pet Supplies Plus, Dollar Tree, Planet Fitness and GameStop.\r\n<br /><br />\r\nThe plaza is currently 25-percent occupied, leaving room to fill the retail center with strong new tenants, grow the current customer base and make Clocktower Plaza the premier shopping center for the Lima community.\r\n<br /><br />\r\nFor leasing information, view our information package or call Greg Butcher at 419-236-7357.', '20fba7_5642399c1d104a21b1eadb6ea4d8f9ca~mv2_d_3300_2550_s_4_2_1529552844.jpg', '2018-06-21 07:47:24', '2018-06-21 07:47:24'),
-(9, 'Tiffany Plaza', 'Boardman, Ohio', 'Tiffany Plaza is a redevelopment retail property that will be a landmark piece as you enter the vibrant corridor of Route 224 in Boardman. Located directly off I-680 at the corner of Tiffany South and Boardman-Poland Road, it is positioned in a prime spot for people traveling or making an every-day commute.\r\n\r\n \r\n<br /><br />\r\nTiffany is already a well-visited plaza, with attractive tenants such Dunkin’ Donuts, Papa Johns and Subway. The new building\r\nwill be 19,700 square feet with a spacious parking area.\r\n\r\n​\r\n<br /><br />\r\n\r\nFor leasing information, view our informational package.', '20fba7_85f071fe5bb247199ac3c8a0302f7b67~mv2_1529552907.jpg', '2018-06-21 07:48:27', '2018-06-21 07:48:27'),
-(10, 'Kennsington Golf Club & Grille', 'Canfield, Ohio', 'Located in Canfield, Ohio, Kennsington Golf Club is an 18-hole, par 71, public golf course, designed by award-winning golf course architect, Brian Huntley. The 7,044-yard course combines natural beauty and serene lakes to perfectly complement the meticulously planned Westford Lifestyle Community, which offers a unique attraction to the surrounding area.\r\n\r\n​​<br /><br />\r\n\r\nKennsington Grille, located just off the green at the clubhouse, also offers the finest area dining year-round, with a wide selection of food and beverages.\r\n\r\n​<br /><br />\r\n\r\nFor more information on Kennsington Golf Club & Grille, visit www.KennsingtonGolf.com.', '20fba7_3846a36ef7d34044b848dd21c232d02a~mv2_1529552964.jpg', '2018-06-21 07:49:24', '2018-06-21 07:49:24'),
-(11, 'Courtyard Marriott Youngstown - Canfield', 'Canfield, Ohio', 'The Courtyard Youngstown-Canfield, located in the most up and coming suburb of Canfield, nearby Route 224, Route 11 & Route 80. The new state-of-the-art lobby at Courtyard provides greater flexibility & choices for our guests, allowing them to be more comfortable & productive.\r\n\r\n <br><br>\r\n\r\nThe hotel is conveniently located near shopping, entertainment, museums, and the area’s major corporations.\r\n\r\n​ <br><br>\r\n\r\nFor more information on the region\'s newest hotel, visit www.CourtyardCanfield.com.', '20fba7_28f4804b783645948d8c3077e366670f~mv2_1529553134.jpg', '2018-06-21 07:52:14', '2018-06-21 07:52:14'),
-(12, 'Delete Me', 'Hopefully, Nowhere', 'I want to be deleted so bad. please delete me.', '20fba7_91e14bf7167b449a8895d0321484fc95~mv2_1529823043.jpg', '2018-06-24 10:50:43', '2018-06-24 10:50:43');
+INSERT INTO `albums` (`id`, `name`, `location`, `description`, `cover_image`, `brochure`, `created_at`, `updated_at`) VALUES
+(6, 'Westford Lifestyle Community', 'Canfield, Ohio', 'A 400+ acre master-planned community encompassing single-family homes, condominiums and villas that surround the region’s newest hotel,Courtyard Marriott Youngstown-Canfield, and Kennsington Golf Club, an 18-hole championship golf course designed by award-winning golf course architect, Brian Huntley.\r\n<br /><br />\r\nFuture plans include a banquet facility plus upscale shopping and dining to complement the existing 150,000+ square feet of office and retail space.\r\n<br /><br />\r\nVisit www.WestfordLife.com for more information.', '20fba7_5badeae48734422c8df29939e0d229e4~mv2_1529550878.jpg', '', '2018-06-21 07:14:38', '2018-06-21 07:14:38'),
+(7, 'Westford Commons', 'Canfield, Ohio', 'Westford Commons is a future open air lifestyle shopping center located on Rt. 224 in Canfield, Ohio, 1/4 mile west of the Route 11 off ramp.\r\n<br /><br />\r\nWestford Commons is located at the forefront of Westford Lifestyle Community which encompasses high end residences, class \"A\" office space, retail, out-patient surgery center, and an 18-hole championship golf course, Kennsington Golf Club.\r\n<br /><br />\r\nFor leasing information, view our informational package or visit www.westfordcommons.com.', '20fba7_f745fc1bb5ee464187751ae341e5cab3~mv2_1529551081.jpg', '', '2018-06-21 07:18:01', '2018-06-21 07:18:01'),
+(8, 'Clocktower Plaza', 'Lima, Ohio', 'Lima Ohio’s Clocktower Plaza includes nearly 238,000 square feet of retail space and houses both local and regional tenants, such as Pet Supplies Plus, Dollar Tree, Planet Fitness and GameStop.\r\n<br /><br />\r\nThe plaza is currently 25-percent occupied, leaving room to fill the retail center with strong new tenants, grow the current customer base and make Clocktower Plaza the premier shopping center for the Lima community.\r\n<br /><br />\r\nFor leasing information, view our information package or call Greg Butcher at 419-236-7357.', '20fba7_5642399c1d104a21b1eadb6ea4d8f9ca~mv2_d_3300_2550_s_4_2_1529552844.jpg', '', '2018-06-21 07:47:24', '2018-06-21 07:47:24'),
+(9, 'Tiffany Plaza', 'Boardman, Ohio', 'Tiffany Plaza is a redevelopment retail property that will be a landmark piece as you enter the vibrant corridor of Route 224 in Boardman. Located directly off I-680 at the corner of Tiffany South and Boardman-Poland Road, it is positioned in a prime spot for people traveling or making an every-day commute.\r\n\r\n \r\n<br /><br />\r\nTiffany is already a well-visited plaza, with attractive tenants such Dunkin’ Donuts, Papa Johns and Subway. The new building\r\nwill be 19,700 square feet with a spacious parking area.\r\n\r\n​\r\n<br /><br />\r\n\r\nFor leasing information, view our informational package.', '20fba7_85f071fe5bb247199ac3c8a0302f7b67~mv2_1529552907.jpg', '', '2018-06-21 07:48:27', '2018-06-21 07:48:27'),
+(10, 'Kennsington Golf Club & Grille', 'Canfield, Ohio', 'Located in Canfield, Ohio, Kennsington Golf Club is an 18-hole, par 71, public golf course, designed by award-winning golf course architect, Brian Huntley. The 7,044-yard course combines natural beauty and serene lakes to perfectly complement the meticulously planned Westford Lifestyle Community, which offers a unique attraction to the surrounding area.\r\n\r\n​​<br /><br />\r\n\r\nKennsington Grille, located just off the green at the clubhouse, also offers the finest area dining year-round, with a wide selection of food and beverages.\r\n\r\n​<br /><br />\r\n\r\nFor more information on Kennsington Golf Club & Grille, visit www.KennsingtonGolf.com.', '20fba7_3846a36ef7d34044b848dd21c232d02a~mv2_1529552964.jpg', '', '2018-06-21 07:49:24', '2018-06-21 07:49:24'),
+(11, 'Courtyard Marriott Youngstown - Canfield', 'Canfield, Ohio', 'The Courtyard Youngstown-Canfield, located in the most up and coming suburb of Canfield, nearby Route 224, Route 11 & Route 80. The new state-of-the-art lobby at Courtyard provides greater flexibility & choices for our guests, allowing them to be more comfortable & productive.\r\n\r\n <br><br>\r\n\r\nThe hotel is conveniently located near shopping, entertainment, museums, and the area’s major corporations.\r\n\r\n​ <br><br>\r\n\r\nFor more information on the region\'s newest hotel, visit www.CourtyardCanfield.com.', '20fba7_28f4804b783645948d8c3077e366670f~mv2_1529553134.jpg', '', '2018-06-21 07:52:14', '2018-06-21 07:52:14'),
+(17, 'edit m', 'delete, me', 'jhghguyg', 'prof2_1530039686.png', 'westford_1530039686.pdf', '2018-06-26 23:01:26', '2018-06-26 23:01:26');
 
 -- --------------------------------------------------------
 
@@ -264,7 +265,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -276,7 +277,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `services`

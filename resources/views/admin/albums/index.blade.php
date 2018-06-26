@@ -14,7 +14,9 @@
                     <img class="card-img-top" src="../storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                     <div class="card-body">
                     <h5 class="card-title">{{$album->name}}</h5>
-                    <p class="card-text">{!!$album->description!!}</p>
+                    <p class="card-text">{!! $album->location !!}</p>
+                    <p class="card-text">{!! $album->description !!}</p>
+                    <a href="../storage/brochures/{{ $album->brochure }}"target="_blank" class="card-link">Brochure</a>
                     <a href="/admin/albums/{{$album->id}}" role="button" class="card-link btn btn-success d-inline">Edit</a>
                     {!! Form::open(['class' => 'form-inline d-inline', 'action' => ['ProjectsController@destroy', $album->id], 'method' => 'POST']) !!}
                         {{Form::hidden('_method', 'DELETE')}}

@@ -8,10 +8,15 @@
             {{Form::text('name', '',['placeholder'=> 'Property Name', 'class'=>'form-control mb-3'])}}
             {{Form::text('location', '',['placeholder'=> 'Property Location', 'class'=>'form-control mb-3'])}}
             {{Form::textarea('description','',['placeholder'=> 'Property Description','class'=>'form-control mb-3'])}}
-            <label for=$name>PDF for Proprty (save pdf as image)</label>
+            <label for="">Album Cover Image</label>
             <div class="custom-file mb-3">
                 {{Form::file('cover_image',['class'=>'form-control-file', 'id'=>'customFile'])}}
                 <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <label for="">PDF for Proprty (save pdf as image)</label>
+            <div class="custom-file mb-3">
+                {{Form::file('brochure',['class'=>'form-control-file', 'id'=>'customFile2'])}}
+                <label class="custom-file-label" for="customFile2">Choose file</label>
             </div>
             {{form::submit('submit', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
@@ -27,7 +32,9 @@
                     <img class="card-img-top" src="../storage/album_covers/{{$album->cover_image}}" alt="{{$album->name}}">
                     <div class="card-body">
                     <h5 class="card-title">{{$album->name}}</h5>
-                    <p class="card-text">{!!$album->description!!}</p>
+                    <p class="card-text">{!! $album->description !!} </p>
+                    <p class="card-text">{!! $album->description !!} </p>
+                    <a href="../storage/brochures/{{ $album->brochure }}" target="_blank" class="card-link">Brochure</a>
                     <a href="/admin/albums/{{$album->id}}" class="card-link">Edit</a>
                     </div>
                 </div>

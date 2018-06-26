@@ -255,7 +255,7 @@
             <div class="section-inner">
                 <h1 class="display-1 text-white wow fadeInLeft">{{$album->name}}</h1>
                 <h3 class="p-2 font-italic font-weight-light pl-5 text-white wow fadeInUp" data-wow-duration="1.6s">{!! $album->location !!}</h3>
-                <a href="storage/album_covers/{{$album->cover_image}}" target="_blank" class="font-weight-bold pl-5 h5 text-white mb-5 wow fadeIn" data-wow-delay=".8s" data-wow-duration="1.3s"><u>Brochure</u></a>
+                <a href="storage/brochures/{{$album->brochure}}" target="_blank" class="font-weight-bold pl-5 h5 text-white mb-5 wow fadeIn" data-wow-delay=".8s" data-wow-duration="1.3s"><u>Brochure</u></a>
                 <h5 class="mb-3 text-white p-5 wow fadeIn" data-wow-delay=".6s" data-wow-duration="1.8s">{!! $album->description !!}</h5>
                 <div class="d-md-flex justify-content-around flex-wrap">
                     @foreach($photos as $photo) 
