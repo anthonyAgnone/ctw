@@ -7,6 +7,7 @@ use App\Admin;
 use App\Album;
 use App\Photo;
 use App\Services;
+use App\Blog;
 
 
 class PageController extends Controller
@@ -36,5 +37,10 @@ class PageController extends Controller
 
     public function soon(){
         return view('pages.coming-soon');
+    }
+
+    public function blog() {
+        $blogs = Blog::all();
+        return view('pages.blog')->with('blogs', $blogs);
     }
 }

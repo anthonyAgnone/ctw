@@ -4,26 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
     <!-- Hamburger Menu -->
     <link href="{{ asset('assets/plugins/hamburgers/dist/hamburgers.min.css') }}" rel="stylesheet" />
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/style3.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/services.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/services.css">
+    <link href="{{ asset('assets/css/projects.css') }}" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <!-- Resource style -->
     <link rel="stylesheet" href="css/demo.css">
     <!-- Demo style -->
 
-    <title>Services</title>
+    <title>Projects</title>
+
+    <style>
+
+        .d-md-flex .card {
+            width: 75%;
+            margin: 0 auto;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .d-md-flex .card {
+                width: 32%;
+            }
+        }
+
+        @media only screen and (min-width: 1170px) {
+            .d-md-flex .card {
+                width: calc(100%/5.2);
+            }
+        }
+
+        .section-inner p {
+            color: #fff;
+            font-size: 1.3rem;
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -36,7 +64,7 @@
     </div>
 
     @include('inc.nav')
-    
+
     <header class="bp-sections" id="header-history">
         <div class="logo-history">
             <svg xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
@@ -153,102 +181,113 @@
         </div>
         <div class="title-header">
             <h1>
-                Services
+                News
             </h1>
         </div>
     </header>
 
-    <div class="hook" id="hook"></div>
-    <section id="section1">
+    @foreach($blogs as $blog)
+        @if(count($blogs) > 0)
+            <section id="section{{$blog->id}}" class="bp-sections">
 
+                <div class="gallery-section">
 
-        <div class="cd-timeline js-cd-timeline">
-            <div class="banner" id="banner1">
+                    <div class="banner" id="banner{{$blog->id}}">
 
-                <div class="inBan inner-banner1">
-                    <p>How We Do It</p>
-                </div>
-
-                <div class="inBan inner-banner2">
-                    <p>CTW</p>
-                </div>
-
-                <div class="inBan inner-banner3">
-                    <p>Development</p>
-                </div>
-
-                <div class="inBan inner-banner4">
-                    <p>
-                        <a href="/">
-                            <i class="fas fa-home"></i>
-                        </a>
-                    </p>
-                </div>
-
-                <div class="inBan inner-banner5">
-                    <p>CTW</p>
-                </div>
-
-                <div class="inBan inner-banner6">
-                    <p>DEV</p>
-                </div>
-
-            </div>
-            <div class="container">
-                <h1 class="display-1 my-5 text-white">Services</h1>
-                <div class="inner-section d-flex justify-content-around flex-wrap">
-                    <?php
-                        $imageArray = array(
-                            1 => "chat.png",
-                            2 => "lamp.png",
-                            3 => "smartphone.png",
-                            4 => "hammer.png",
-                            5 => "document.png",
-                            6 => "crane.png",
-                            7 => "key.png",
-                            8 => "blueprint-1.png",
-                            9 => "blueprint-2.png",
-                            10 => "balcony.png",
-                            11 => "chat.png",
-                            12 => "letter.png"
-                        );
-                        $i = 1;
-                    ?>
-                    @foreach($services as $service)
-                        <div class="card my-5 " style="width: 18rem; background-color: transparent;">
-                            @if($i <= count($imageArray))
-                            <img class="wow slideInUp card-img-top my-3" src="assets/images/icons/{{$imageArray[$i]}}" alt="Card image cap">
-                            @else
-                            <img class="wow slideInUp card-img-top my-3" src="assets/images/icons/{{$imageArray[1]}}" alt="Card image cap">
-                            @endif
-                            <div class="card-body mt-3 text-white">
-                                <p class="wow fadeIn card-text h2 text-center">{{$service->body}}</p>
-                            </div>
+                        <div class="inBan inner-banner1">
+                            <p>Projects</p>
                         </div>
-                        <?php
-                            $i++;
-                        ?>
-                    @endforeach 
+
+                        <div class="inBan inner-banner2">
+                            <p>CTW</p>
+                        </div>
+
+                        <div class="inBan inner-banner3">
+                            <p>Development</p>
+                        </div>
+
+                        <div class="inBan inner-banner4">
+                            <p>
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="inBan inner-banner5">
+                            <p>CTW</p>
+                        </div>
+
+                        <div class="inBan inner-banner6">
+                            <p>DEV</p>
+                        </div>
+
+                    </div>
+
+                    <div class="section-inner">
+                        <h1 class="display-3 text-white">{!!$blog->title!!}</h1>
+                        <h6 class="lead text-white mb-5">{{$blog->created_at}}</h6>
+                        <img style="max-width: 25%" src="storage/blog_covers/{{$blog->cover_image}}" alt="" class="img-responsive float-left mr-5" />
+                        <p class="text-white h5">{!!$blog->body!!}</p>
+
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    </section>
+            </section>
+        @else
+            <section id="section1" class="bp-sections">
 
+                <div class="gallery-section">
+
+                    <div class="banner" id="banner1">
+
+                        <div class="inBan inner-banner1">
+                            <p>Projects</p>
+                        </div>
+
+                        <div class="inBan inner-banner2">
+                            <p>CTW</p>
+                        </div>
+
+                        <div class="inBan inner-banner3">
+                            <p>Development</p>
+                        </div>
+
+                        <div class="inBan inner-banner4">
+                            <p>
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="inBan inner-banner5">
+                            <p>CTW</p>
+                        </div>
+
+                        <div class="inBan inner-banner6">
+                            <p>DEV</p>
+                        </div>
+
+                    </div>
+                    <div class="section-inner">
+                        
+                    </div>
+                </div>
+                <p>No blogs. Come back later</p>
+            </section>
+        @endif
+    @endforeach
 
     <!-- cd-timeline -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-    <script src="//cdn.rawgit.com/icons8/bower-webicon/v0.10.7/jquery-webicon.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/projects.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-    <script src="assets/js/timeline.js"></script>
+              <script>
+              new WOW().init();
+              </script>
     <!-- Resource JavaScript -->
 </body>
 

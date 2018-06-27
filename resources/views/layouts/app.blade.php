@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>CTW Admin</title>
 
@@ -33,6 +34,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/albums">Properties</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/blog">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
             </ul>
         </aside>
         <header class="p-4">
@@ -48,7 +62,6 @@
                     @endforeach
                 </div>
             @endif 
-
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <p>{{session('success')}}</p>
@@ -57,7 +70,6 @@
                     </button>
                 </div>
             @endif 
-
             @if(session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <p>{{session('error')}}</p>
@@ -66,7 +78,7 @@
                     </button>
                 </div>
             @endif 
-
+            
             @yield('header')
         </header>
         <main class="p-4">
@@ -79,7 +91,7 @@
 
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'article-ckeditor' );
+        CKEDITOR.replace('article-ckeditor');
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

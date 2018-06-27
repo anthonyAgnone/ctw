@@ -32,37 +32,9 @@
         <div class="loader-section section-right"></div>
 
     </div>
-    <nav>
-        <div class="navButton">
-            <button class="hamburger hamburger--spin" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
 
-        <div class="overlay" id="overlay">
-            <nav class="overlay-menu" id="menu">
-                <ul>
-                    <li>
-                        <a href="/">Welcome</a>
-                    </li>
-                    <li>
-                        <a href="/coming-soon">History</a>
-                    </li>
-                    <li>
-                        <a href="/services">Services</a>
-                    </li>
-                    <li>
-                        <a href="/projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/#fifthPage">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
+    @include('inc.nav')
+    
     <header class="bp-sections" id="header-history">
         <div class="logo-history">
             <svg xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
@@ -183,17 +155,15 @@
             </h1>
         </div>
     </header>
+        
+    <!-- cd-timeline -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="assets/js/timeline.js"></script>
 
-        <!-- cd-timeline -->
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-        <script src="//cdn.rawgit.com/icons8/bower-webicon/v0.10.7/jquery-webicon.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-        <script src="assets/js/timeline.js"></script>
-        <!-- Resource JavaScript -->
     </body>
     
     </html>
