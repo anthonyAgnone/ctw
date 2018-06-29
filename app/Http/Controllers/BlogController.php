@@ -155,6 +155,6 @@ class BlogController extends Controller
             $blog->delete();
         }
 
-        return redirect('/admin/blog')->with('success', 'News Post Deleted');
+        return redirect('/admin/blog')->with('success', ' News Post Deleted');
     }
 }
