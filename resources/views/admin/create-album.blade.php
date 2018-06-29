@@ -7,7 +7,7 @@
         {!! Form::open(['action' => 'ProjectsController@store','method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
             {{Form::text('name', '',['placeholder'=> 'Property Name', 'class'=>'form-control mb-3'])}}
             {{Form::text('location', '',['placeholder'=> 'Property Location', 'class'=>'form-control mb-3'])}}
-            {{Form::textarea('description','',['placeholder'=> 'Property Description','class'=>'form-control mb-3'])}}
+            {{Form::textarea('description','',['id'=>'article-ckeditor', 'placeholder'=> 'Property Description','class'=>'form-control mb-3'])}}
             <label for="">Album Cover Image</label>
             <div class="custom-file mb-3">
                 {{Form::file('cover_image',['class'=>'form-control-file', 'id'=>'customFile'])}}
