@@ -151,8 +151,10 @@ class BlogController extends Controller
 
         if(Storage::delete('public/blog_covers/'.$blog->cover_image)){
             $blog->delete();
+        } else {
+            $blog->delete();
         }
 
-        return redirect('/admin/blog')->with('success', 'Album Deleted');
+        return redirect('/admin/blog')->with('success', 'News Post Deleted');
     }
 }
