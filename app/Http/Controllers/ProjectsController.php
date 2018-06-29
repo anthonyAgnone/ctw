@@ -42,6 +42,7 @@ class ProjectsController extends Controller
             'name'=>'required',
         ]);
 
+
             //get file name with the extension
         $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //Get just the filename
@@ -55,18 +56,21 @@ class ProjectsController extends Controller
             // Upload image
         $path = $request->file('cover_image')->storeAs('public/album_covers', $filenameToStore);
 
-        //get file name with the extension
-        $filenameWithExtBro = $request->file('brochure')->getClientOriginalName();
-        //Get just the filename
-        $filenameBro = pathinfo($filenameWithExtBro, PATHINFO_FILENAME);
-        //Get extension
-        $extensionBro = $request->file('brochure')->getClientOriginalExtension();
-        
-        //Create new filename
-        $filenameToStoreBro = $filenameBro.'_'.time().'.'.$extensionBro;
-        
-        // Upload image
-        $pathBro = $request->file('brochure')->storeAs('public/brochures', $filenameToStoreBro);
+        if($request->file('brochure')){
+            //get file name with the extension
+            $filenameWithExtBro = $request->file('brochure')->getClientOriginalName();
+            //Get just the filename
+            $filenameBro = pathinfo($filenameWithExtBro, PATHINFO_FILENAME);
+            //Get extension
+            $extensionBro = $request->file('brochure')->getClientOriginalExtension();
+            
+            //Create new filename
+            $filenameToStoreBro = $filenameBro.'_'.time().'.'.$extensionBro;
+            
+            // Upload image
+            $pathBro = $request->file('brochure')->storeAs('public/brochures', $filenameToStoreBro);
+        }
+
 
             //create album
         $project = new Album;
@@ -75,7 +79,10 @@ class ProjectsController extends Controller
         $project->location = $request->input('location');
         $project->description = $request->input('description');
         $project->cover_image = $filenameToStore;
-        $project->brochure = $filenameToStoreBro;
+        
+        if($request->file('brochure')){
+            $project->brochure = $filenameToStoreBro;
+        }
         
         $project->save();
 
