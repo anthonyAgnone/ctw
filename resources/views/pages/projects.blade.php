@@ -45,6 +45,12 @@
             }
         }
 
+        a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
 
     </style>
 </head>
