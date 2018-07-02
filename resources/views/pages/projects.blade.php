@@ -28,11 +28,6 @@
 
     <style>
 
-        .d-md-flex .card {
-            width: 75%;
-            margin: 0 auto;
-        }
-        
         @media only screen and (min-width: 768px) {
             .d-md-flex .card {
                 width: 32%;
