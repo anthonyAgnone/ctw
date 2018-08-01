@@ -13,149 +13,129 @@ body {
   background-color: var(--bp-dark);
 }
 
-/* -------------------------------- 
-    Patterns - reusable parts of our design
-    -------------------------------- */
-
-@media only screen and (min-width: 1170px) {
-  .cd-is-hidden {
-    visibility: hidden;
-  }
-}
-
-/* -------------------------------- 
-    Resource style 
-    -------------------------------- */
-
 header {
-  line-height: 200px;
-  text-align: center;
-  background: var(--bp-dark);
   height: 100vh;
-  padding: 20vh 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#header-history {
-  margin-bottom: 2em;
+.container {
+  text-align: center;
+  width: 50%;
+  width: 50vw;
 }
 
-.title-header h1 {
-  font-size: 4em;
-  color: white;
+.container p {
+  text-align: right;
+  padding-right: 3rem;
 }
 
-.svgCTWlogo {
-  opacity: 1;
-}
-
-.plugin-stroke {
-  fill-opacity: 1;
-  stroke-width: 0;
-}
-
-.banner {
-  display: none;
-}
-
-.gallery-section {
-  background: url('../images/09white.png'), rgba(41, 82, 163, 9);
-  border: 2px solid #fff;
-  width: 90%;
+header img {
+  height: auto;
+  width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+}
+
+.bp-sections {
+  background: url('../images/09white.png'), rgba(41, 82, 163, 9);
+  width: 85%;
+  width: 85vw;
+  margin-bottom: 5rem;
+  margin: 5rem auto;
+  border: 2px solid #fff;
 }
 
 .section-inner {
-  padding: 8rem;
+  padding: 3rem;
 }
 
-@media only screen and (min-width: 1170px) {
-  header {
-    height: 100vh;
-    line-height: 300px;
-  }
-  header h1 {
-    font-size: 2.4rem;
-  }
+.topBan {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  float: right;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  height: 15%;
 }
 
-@media only screen and (min-width: 1170px) {
-  .bp-sections {
-    min-height: 100vh;
-    padding: 3em 0;
-  }
-  #header-history {
-    display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    height: 100vh;
-  }
-  .logo-history {
-    grid-row: 2/4;
-    grid-column: 2/3;
-  }
-  .title-header {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    align-self: start;
-    justify-self: end;
-    padding: 0;
-    margin: 0;
-  }
-  .banner {
-    opacity: 1;
-    float: right;
-    margin-top: 2em;
-    position: relative;
-    top: -2em;
-    margin-bottom: 2em;
-  }
-  .inBan {
-    border: 1px solid white;
-    border-top: none;
-  }
+.banTop {
+  display: flex;
+  border-bottom: 1px solid #fff;
 }
 
-@media only screen and (min-width: 1170px) {
-  .banner {
-    display: grid;
-  }
+.banTop p {
+  font-weight: 700;
 }
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 1170px) {}
-
-@media only screen and (min-width: 1170px) {
-  .d-md-flex .card {
-    width: 32%;
-  }
+.banTop div {
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 15px 0 0 0;
 }
 
-.double {
-  outline: 1px solid #fff;
-  outline-offset: 3px;
+.banTop div:first-child {
+  border-right: 1px solid #fff;
 }
 
-.card {
-  background-color: rgba(41, 82, 163, 0);
+.banBot {
+  display: flex;
+  flex-direction: row;
+}
+
+.banLeft {
+  width: 30%;
+  color: #fff;
+  border-right: 1px solid white;
+  margin: 0;
+  padding: 0;
+}
+
+.banLeft a {
+  font-size: 2rem;
+}
+
+.banLeft a:hover {
+  color: white;
+}
+
+.banRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 767.98px) {
+  .topBan {
+    display: none;
+  }
+  .container {
+    text-align: center;
+    width: 80%;
+    width: 80vw;
+  }
+  .container p {
+    padding: .5rem;
+  }
+  .bp-sections {
+    margin: 2rem auto;
+    width: 95%;
+    width: 95vw;
+  }
   .section-inner {
-    padding: .3rem;
+    padding: .5rem;
   }
   .display-1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
-  .d-md-flex .card {
-    width: 95%;
-    margin: 0 auto;
-  }
-  h5 {
-    font-size: 1.1rem;
-  }
-  .p-5 {
-    padding: .5rem !important;
+  .display-3 {
+    font-size: 1.8rem;
   }
 }
