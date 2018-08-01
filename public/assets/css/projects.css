@@ -112,6 +112,10 @@ header img {
   padding: 0;
 }
 
+.card-body {
+  background-color: transparent;
+}
+
 @media (max-width: 767.98px) {
   .topBan {
     display: none;
